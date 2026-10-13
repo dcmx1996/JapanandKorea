@@ -20,11 +20,11 @@
     .header-left { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
     .date-tag { background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: bold; padding: 3px 8px; border-radius: 4px; }
     .card-title { font-size: 15px; font-weight: bold; color: #111827; }
-    .progress-tag { font-size: 11px; color: #9ca3af; background: #f3f4f6; padding: 2px 7px; border-radius: 10px; font-weight: 500; }
-    .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+    .progress-tag { font-size: 11px; color: #6b7280; background: #f3f4f6; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
     .tag { background: #f3f4f6; color: #4b5563; font-size: 11px; padding: 2px 6px; border-radius: 4px; }
-    .card-desc { font-size: 13px; color: #4b5563; line-height: 1.6; margin-bottom: 10px; }
-    .split-box { padding: 10px; border-radius: 8px; margin-top: 8px; font-size: 13px; }
+    .card-desc { font-size: 13px; color: #4b5563; line-height: 1.6; }
+    .split-box { padding: 10px; border-radius: 8px; margin-top: 8px; font-size: 13px; line-height: 1.5; }
     .us-box { background: #eff6ff; }
     .cn-box { background: #fdf2f8; }
     .box-label { font-size: 11px; font-weight: bold; margin-bottom: 4px; }
@@ -32,9 +32,11 @@
     .cn-label { color: #be185d; }
 
     /* To-Do List Styles */
-    .todo-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 10px; padding-top: 10px; border-top: 1px dashed #e5e7eb; }
-    .todo-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: #374151; line-height: 1.45; cursor: pointer; user-select: none; }
-    .todo-item input[type="checkbox"] { margin-top: 2px; width: 16px; height: 16px; accent-color: #2563eb; cursor: pointer; flex-shrink: 0; }
+    .todo-wrap { margin-top: 12px; padding-top: 10px; border-top: 1px dashed #e5e7eb; }
+    .todo-header-label { font-size: 11px; font-weight: bold; color: #6b7280; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .todo-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .todo-item { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: #374151; line-height: 1.45; cursor: pointer; user-select: none; }
+    .todo-item input[type="checkbox"] { margin-top: 2.5px; width: 16px; height: 16px; accent-color: #2563eb; cursor: pointer; flex-shrink: 0; }
     .todo-item.completed .todo-text { text-decoration: line-through; color: #9ca3af; }
   </style>
 </head>
@@ -43,49 +45,8 @@
     <div class="badge">跨国汇合行程</div>
     <div class="title">东京・关西汇合・首尔漫游</div>
     <div class="date">2026.12.24 — 2027.01.07</div>
-    <div class="notice">💡 <b>特别提醒：</b>琉璃光院12月下旬进入冬歇期，行程已精选洛北名庭/岚山作为替代！汇合段已升级为可交互 To-Do List，勾选状态自动保存。</div>
+    <div class="notice">💡 <b>特别提醒：</b>琉璃光院12月下旬进入冬歇期，行程已精选京都洛北名庭/岚山水镜作为替代！汇合段含实时可打勾 To-Do 清单。</div>
   </div>
 
   <div class="tabs">
-    <button class="tab-btn" onclick="setTab('tokyo')">12.24-28 前期分头</button>
-    <button class="tab-btn active" onclick="setTab('kansai')">12.28-1.2 关西汇合</button>
-    <button class="tab-btn" onclick="setTab('seoul')">1.2-1.7 首尔探店</button>
-  </div>
-
-  <!-- 分头行程 -->
-  <div id="tab-tokyo" style="display:none;">
-    <div class="card">
-      <div class="card-title">12.24 (周三)</div>
-      <div class="split-box us-box"><div class="box-label us-label">你们（东京）</div>抵达东京，入住涩谷/新宿，圣诞夜街头灯展漫步</div>
-      <div class="split-box cn-box"><div class="box-label cn-label">国内朋友</div>国内整装待发</div>
-    </div>
-    <div class="card">
-      <div class="card-title">12.25 (周四)</div>
-      <div class="split-box us-box"><div class="box-label us-label">你们（东京）</div>中目黑咖啡/目黑川 → 代官山茑屋书店 → 涩谷Shibuya Sky日落</div>
-      <div class="split-box cn-box"><div class="box-label cn-label">国内朋友（大阪）</div>抵达关西机场，入住难波/心斋桥，道顿堀美食</div>
-    </div>
-    <div class="card">
-      <div class="card-title">12.26 (周五)</div>
-      <div class="split-box us-box"><div class="box-label us-label">你们（东京）</div>表参道 & 青山买手店/建筑巡礼 → 根津美术馆庭园</div>
-      <div class="split-box cn-box"><div class="box-label cn-label">国内朋友（大阪）</div>【大阪环球影城 USJ 全天畅玩】任天堂世界 + 哈利波特</div>
-    </div>
-    <div class="card">
-      <div class="card-title">12.27 (周六)</div>
-      <div class="split-box us-box"><div class="box-label us-label">你们（东京）</div>银座潮流艺术探店（Dover Street Market）/ 六本木夜景</div>
-      <div class="split-box cn-box"><div class="box-label cn-label">国内朋友（大阪）</div>大阪城公园、通天阁、梅田蓝天大厦夜景</div>
-    </div>
-  </div>
-
-  <!-- 关西汇合 (To-Do List 形式) -->
-  <div id="tab-kansai">
-    <div class="card" data-day="1228">
-      <div class="card-header">
-        <div class="header-left">
-          <span class="date-tag">12.28 周日</span>
-          <span class="card-title">关西大汇合（大阪集结）</span>
-        </div>
-        <span class="progress-tag">0/4 完成</span>
-      </div>
-      <div class="tags"><span class="tag">新干线</span><span class="tag">寿喜烧</span><span class="tag">汇合日</span></div>
-      <div class="card-desc">全员集结大阪，开启合体行程！</div>
-      <ul class="todo-list
+    <button class="tab-btn" onclick="setTab('tokyo')">
