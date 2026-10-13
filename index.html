@@ -16,18 +16,26 @@
     .tab-btn { flex: 1; border: none; background: transparent; padding: 10px 0; font-size: 13px; color: #6b7280; border-radius: 8px; cursor: pointer; transition: 0.2s; }
     .tab-btn.active { background: #2563eb; color: #fff; font-weight: bold; }
     .card { background: #fff; border-radius: 12px; padding: 16px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
-    .card-header { display: flex; align-items: center; margin-bottom: 8px; }
-    .date-tag { background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: bold; padding: 3px 8px; border-radius: 4px; margin-right: 8px; }
+    .card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+    .header-left { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .date-tag { background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: bold; padding: 3px 8px; border-radius: 4px; }
     .card-title { font-size: 15px; font-weight: bold; color: #111827; }
-    .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+    .progress-tag { font-size: 11px; color: #9ca3af; background: #f3f4f6; padding: 2px 7px; border-radius: 10px; font-weight: 500; }
+    .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
     .tag { background: #f3f4f6; color: #4b5563; font-size: 11px; padding: 2px 6px; border-radius: 4px; }
-    .card-desc { font-size: 13px; color: #4b5563; line-height: 1.6; }
+    .card-desc { font-size: 13px; color: #4b5563; line-height: 1.6; margin-bottom: 10px; }
     .split-box { padding: 10px; border-radius: 8px; margin-top: 8px; font-size: 13px; }
     .us-box { background: #eff6ff; }
     .cn-box { background: #fdf2f8; }
     .box-label { font-size: 11px; font-weight: bold; margin-bottom: 4px; }
     .us-label { color: #1d4ed8; }
     .cn-label { color: #be185d; }
+
+    /* To-Do List Styles */
+    .todo-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 10px; padding-top: 10px; border-top: 1px dashed #e5e7eb; }
+    .todo-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: #374151; line-height: 1.45; cursor: pointer; user-select: none; }
+    .todo-item input[type="checkbox"] { margin-top: 2px; width: 16px; height: 16px; accent-color: #2563eb; cursor: pointer; flex-shrink: 0; }
+    .todo-item.completed .todo-text { text-decoration: line-through; color: #9ca3af; }
   </style>
 </head>
 <body>
@@ -35,7 +43,7 @@
     <div class="badge">跨国汇合行程</div>
     <div class="title">东京・关西汇合・首尔漫游</div>
     <div class="date">2026.12.24 — 2027.01.07</div>
-    <div class="notice">💡 <b>特别提醒：</b>琉璃光院12月下旬进入冬歇期，行程已精选京都洛北名庭/岚山水镜作为替代！</div>
+    <div class="notice">💡 <b>特别提醒：</b>琉璃光院12月下旬进入冬歇期，行程已精选洛北名庭/岚山作为替代！汇合段已升级为可交互 To-Do List，勾选状态自动保存。</div>
   </div>
 
   <div class="tabs">
@@ -68,71 +76,16 @@
     </div>
   </div>
 
-  <!-- 关西汇合 -->
+  <!-- 关西汇合 (To-Do List 形式) -->
   <div id="tab-kansai">
-    <div class="card">
-      <div class="card-header"><span class="date-tag">12.28 周日</span><span class="card-title">关西大汇合（大阪集结）</span></div>
+    <div class="card" data-day="1228">
+      <div class="card-header">
+        <div class="header-left">
+          <span class="date-tag">12.28 周日</span>
+          <span class="card-title">关西大汇合（大阪集结）</span>
+        </div>
+        <span class="progress-tag">0/4 完成</span>
+      </div>
       <div class="tags"><span class="tag">新干线</span><span class="tag">寿喜烧</span><span class="tag">汇合日</span></div>
-      <div class="card-desc">你们早乘新干线直奔新大阪（约2.5h）；朋友退房后汇合，共同入住大阪酒店。晚上难波/心斋桥相聚，安排高品质和牛寿喜烧/居酒屋庆祝！</div>
-    </div>
-    <div class="card">
-      <div class="card-header"><span class="date-tag">12.29 周一</span><span class="card-title">宇治抹茶与禅意一日游</span></div>
-      <div class="tags"><span class="tag">宇治抹茶</span><span class="tag">平等院</span><span class="tag">源氏物语</span></div>
-      <div class="card-desc">全员前往宇治：打卡平等院凤凰堂，漫步宇治川。午后品尝中村藤吉本店抹茶甜点与抹茶荞麦面。</div>
-    </div>
-    <div class="card">
-      <div class="card-header"><span class="date-tag">12.30 周二</span><span class="card-title">清水寺古韵与名庭探幽</span></div>
-      <div class="tags"><span class="tag">清水寺</span><span class="tag">二年坂三年坂</span><span class="tag">圆光寺/源光庵</span></div>
-      <div class="card-desc">早晨清水寺俯瞰京都古城，漫步二年坂·三年坂。下午探访名庭（推荐洛北圆光寺“十牛之庭”或鹰峰“源光庵”方圆禅窗）。</div>
-    </div>
-    <div class="card">
-      <div class="card-header"><span class="date-tag">12.31 周三</span><span class="card-title">岚山漫步 ＆ 大晦日除夕跨年</span></div>
-      <div class="tags"><span class="tag">岚山竹林</span><span class="tag">跨年荞麦面</span><span class="tag">除夜之钟</span></div>
-      <div class="card-desc">白天岚山渡月桥、天龙寺、竹林小径漫步。晚上享用跨年荞麦面；深夜前往八坂神社感受“苍朮诣”或听108响除夜之钟。</div>
-    </div>
-    <div class="card">
-      <div class="card-header"><span class="date-tag">1.1 周四</span><span class="card-title">新年“初诣”与迎新休闲</span></div>
-      <div class="tags"><span class="tag">初诣参拜</span><span class="tag">御守祈福</span><span class="tag">元旦</span></div>
-      <div class="card-desc">随当地习俗进行新年首次参拜，求御守与新年签。下午在鸭川或精品咖啡馆悠闲度过，晚上共享新年聚餐。</div>
-    </div>
-  </div>
-
-  <!-- 首尔段 -->
-  <div id="tab-seoul" style="display:none;">
-    <div class="card">
-      <div class="card-header"><span class="date-tag">1.2 周五</span><span class="card-title">兵分两路：你们飞首尔，朋友大阪自由活动</span></div>
-      <div class="card-desc">你们直飞首尔（仁川/金浦），入住明洞/汉南洞，晚上享用“一只鸡”；朋友在大阪百货选购新年福袋/伴手礼。</div>
-    </div>
-    <div class="card">
-      <div class="card-header"><span class="date-tag">1.3 周六</span><span class="card-title">朋友回国 ＆ 首尔传统与现代艺术漫游</span></div>
-      <div class="card-desc">朋友搭机回国；你们游览景福宫、北村韩屋村、三清洞文艺画廊与独立茶室，傍晚登南山塔。</div>
-    </div>
-    <div class="card">
-      <div class="card-header"><span class="date-tag">1.4 周日</span><span class="card-title">汉南洞先锋设计与潮流买手店</span></div>
-      <div class="card-desc">探访先锋品牌店（Nonfiction、Tamburins、Mardi Mercredi、买手店）与精品咖啡馆。</div>
-    </div>
-    <div class="card">
-      <div class="card-header"><span class="date-tag">1.5 周一</span><span class="card-title">圣水洞旧厂工业风潮流街区</span></div>
-      <div class="card-desc">打卡当红旧工厂改造店、Ader Error概念店、巨型特色烘焙工坊。</div>
-    </div>
-    <div class="card">
-      <div class="card-header"><span class="date-tag">1.6 周二</span><span class="card-title">现代百货（汝矣岛）与弘大活力夜生活</span></div>
-      <div class="card-desc">白天打卡汝矣岛 The Hyundai Seoul，傍晚前往弘大/延南洞吃烤五花肉与看街头演出。</div>
-    </div>
-    <div class="card">
-      <div class="card-header"><span class="date-tag">1.7 周三</span><span class="card-title">首尔伴手礼采买 ＆ 返程</span></div>
-      <div class="card-desc">收拾行李，前往仁川机场返程。</div>
-    </div>
-  </div>
-
-  <script>
-    function setTab(tabId) {
-      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-      document.getElementById('tab-tokyo').style.display = tabId === 'tokyo' ? 'block' : 'none';
-      document.getElementById('tab-kansai').style.display = tabId === 'kansai' ? 'block' : 'none';
-      document.getElementById('tab-seoul').style.display = tabId === 'seoul' ? 'block' : 'none';
-    }
-  </script>
-</body>
-</html>
+      <div class="card-desc">全员集结大阪，开启合体行程！</div>
+      <ul class="todo-list
