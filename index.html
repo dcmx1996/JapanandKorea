@@ -49,4 +49,286 @@
   </div>
 
   <div class="tabs">
-    <button class="tab-btn" onclick="setTab('tokyo')">
+    <button class="tab-btn" onclick="setTab('tokyo')">12.24-28 前期分头</button>
+    <button class="tab-btn active" onclick="setTab('kansai')">12.28-1.2 关西汇合</button>
+    <button class="tab-btn" onclick="setTab('seoul')">1.2-1.7 首尔探店</button>
+  </div>
+
+  <!-- 分头行程 -->
+  <div id="tab-tokyo" style="display:none;">
+    <div class="card">
+      <div class="card-title">12.24 (周三)</div>
+      <div class="split-box us-box"><div class="box-label us-label">你们（东京）</div>抵达东京，入住涩谷/新宿，圣诞夜街头灯展漫步</div>
+      <div class="split-box cn-box"><div class="box-label cn-label">国内朋友</div>国内整装待发</div>
+    </div>
+    <div class="card">
+      <div class="card-title">12.25 (周四)</div>
+      <div class="split-box us-box"><div class="box-label us-label">你们（东京）</div>中目黑咖啡/目黑川 → 代官山茑屋书店 → 涩谷Shibuya Sky日落</div>
+      <div class="split-box cn-box"><div class="box-label cn-label">国内朋友（大阪）</div>抵达关西机场，入住难波/心斋桥，道顿堀美食</div>
+    </div>
+    <div class="card">
+      <div class="card-title">12.26 (周五)</div>
+      <div class="split-box us-box"><div class="box-label us-label">你们（东京）</div>表参道 & 青山买手店/建筑巡礼 → 根津美术馆庭园</div>
+      <div class="split-box cn-box"><div class="box-label cn-label">国内朋友（大阪）</div>【大阪环球影城 USJ 全天畅玩】任天堂世界 + 哈利波特</div>
+    </div>
+    <div class="card">
+      <div class="card-title">12.27 (周六)</div>
+      <div class="split-box us-box"><div class="box-label us-label">你们（东京）</div>银座潮流艺术探店（Dover Street Market）/ 六本木夜景</div>
+      <div class="split-box cn-box"><div class="box-label cn-label">国内朋友（大阪）</div>大阪城公园、通天阁、梅田蓝天大厦夜景</div>
+    </div>
+  </div>
+
+  <!-- 关西汇合 -->
+  <div id="tab-kansai">
+    <div class="card" data-day="1228">
+      <div class="card-header">
+        <div class="header-left">
+          <span class="date-tag">12.28 周日</span>
+          <span class="card-title">关西大汇合（大阪集结）</span>
+        </div>
+        <span class="progress-tag">0/4 完成</span>
+      </div>
+      <div class="tags"><span class="tag">新干线</span><span class="tag">寿喜烧</span><span class="tag">汇合日</span></div>
+      <div class="card-desc">你们早乘新干线直奔新大阪（约2.5h）；朋友退房后汇合，共同入住大阪酒店。晚上难波/心斋桥相聚，安排高品质和牛寿喜烧/居酒屋庆祝！</div>
+      <div class="todo-wrap">
+        <div class="todo-header-label">今日待办事项</div>
+        <ul class="todo-list">
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">乘早班新干线由东京前往新大阪（约 2.5h）</span></li>
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">与国内朋友汇合，共同办理大阪酒店入住</span></li>
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">晚上难波/心斋桥享用和牛寿喜烧/居酒屋聚餐庆祝</span></li>
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">采买出行补给、交通卡（ICOCA/Suica）充值</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" data-day="1229">
+      <div class="card-header">
+        <div class="header-left">
+          <span class="date-tag">12.29 周一</span>
+          <span class="card-title">宇治抹茶与禅意一日游</span>
+        </div>
+        <span class="progress-tag">0/4 完成</span>
+      </div>
+      <div class="tags"><span class="tag">宇治抹茶</span><span class="tag">平等院</span><span class="tag">源氏物语</span></div>
+      <div class="card-desc">全员前往宇治：打卡平等院凤凰堂，漫步宇治川。午后品尝中村藤吉本店抹茶甜点与抹茶荞麦面。</div>
+      <div class="todo-wrap">
+        <div class="todo-header-label">今日待办事项</div>
+        <ul class="todo-list">
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">全员前往宇治，参观平等院凤凰堂</span></li>
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">漫步宇治川，打卡源氏物语雕像与宇治桥</span></li>
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">打卡中村藤吉本店品尝抹茶甜点与抹茶荞麦面</span></li>
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">傍晚乘车返回大阪/京都享用晚餐</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" data-day="1230">
+      <div class="card-header">
+        <div class="header-left">
+          <span class="date-tag">12.30 周二</span>
+          <span class="card-title">清水寺古韵与名庭探幽</span>
+        </div>
+        <span class="progress-tag">0/4 完成</span>
+      </div>
+      <div class="tags"><span class="tag">清水寺</span><span class="tag">二年坂三年坂</span><span class="tag">圆光寺/源光庵</span></div>
+      <div class="card-desc">早晨清水寺俯瞰京都古城，漫步二年坂·三年坂。下午探访名庭（推荐洛北圆光寺“十牛之庭”或鹰峰“源光庵”方圆禅窗）。</div>
+      <div class="todo-wrap">
+        <div class="todo-header-label">今日待办事项</div>
+        <ul class="todo-list">
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">清晨前往清水寺登清水舞台俯瞰京都全貌（避开高峰）</span></li>
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">漫步二年坂·三年坂石板街</span></li>
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">下午探访洛北名庭（圆光寺“十牛之庭” 或 鹰峰源光庵圆窗）</span></li>
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">确认次日大晦日除夕跨年夜宵餐厅</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" data-day="1231">
+      <div class="card-header">
+        <div class="header-left">
+          <span class="date-tag">12.31 周三</span>
+          <span class="card-title">岚山漫步 ＆ 大晦日除夕跨年</span>
+        </div>
+        <span class="progress-tag">0/4 完成</span>
+      </div>
+      <div class="tags"><span class="tag">岚山竹林</span><span class="tag">跨年荞麦面</span><span class="tag">除夜之钟</span></div>
+      <div class="card-desc">白天岚山渡月桥、天龙寺、竹林小径漫步。晚上享用跨年荞麦面；深夜前往八坂神社感受“苍朮诣”或听108响除夜之钟。</div>
+      <div class="todo-wrap">
+        <div class="todo-header-label">今日待办事项</div>
+        <ul class="todo-list">
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">白天岚山渡月桥、天龙寺、竹林小径漫步</span></li>
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">傍晚全员享用日本传统跨年荞麦面（年越し蕎麦）</span></li>
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">深夜八坂神社感受“苍朮诣”或寺庙听 108 响除夜之钟</span></li>
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">跨年倒计时，迎接 2027 新年</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" data-day="0101">
+      <div class="card-header">
+        <div class="header-left">
+          <span class="date-tag">1.1 周四</span>
+          <span class="card-title">新年“初诣”与迎新休闲</span>
+        </div>
+        <span class="progress-tag">0/4 完成</span>
+      </div>
+      <div class="tags"><span class="tag">初诣参拜</span><span class="tag">御守祈福</span><span class="tag">元旦</span></div>
+      <div class="card-desc">随当地习俗进行新年首次参拜，求御守与新年签。下午在鸭川或精品咖啡馆悠闲度过，晚上共享新年聚餐。</div>
+      <div class="todo-wrap">
+        <div class="todo-header-label">今日待办事项</div>
+        <ul class="todo-list">
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">新年“初诣”参拜，求御守与新年吉签</span></li>
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">下午鸭川沿岸散步或打卡精品咖啡馆</span></li>
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">晚上共享新年开年大餐聚餐</span></li>
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">核对次日关西飞首尔航班时间及行李准备</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 首尔段 -->
+  <div id="tab-seoul" style="display:none;">
+    <div class="card" data-day="0102">
+      <div class="card-header">
+        <div class="header-left">
+          <span class="date-tag">1.2 周五</span>
+          <span class="card-title">全员转战首尔 ＆ 暖冬美食夜</span>
+        </div>
+        <span class="progress-tag">0/4 完成</span>
+      </div>
+      <div class="tags"><span class="tag">关西直飞仁川/金浦</span><span class="tag">全员同行</span><span class="tag">陈玉华一只鸡</span></div>
+      <div class="card-desc">全员一同自大阪关西机场搭乘航班飞往首尔。入住弘大或明洞便于交通接驳的酒店。晚上打卡经典东大门陈玉华一只鸡或烤肉，感受首尔夜间市井烟火气。</div>
+      <div class="todo-wrap">
+        <div class="todo-header-label">今日待办事项</div>
+        <ul class="todo-list">
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">关西机场出发，全员直飞首尔（仁川/金浦）</span></li>
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">购买/充值 T-Money 卡，搭乘机场快线前往首尔市区</span></li>
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">办理酒店入住（弘大或明洞便于接驳）</span></li>
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">晚上全员吃东大门陈玉华一只鸡或韩式烤肉</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" data-day="0103">
+      <div class="card-header">
+        <div class="header-left">
+          <span class="date-tag">1.3 周六</span>
+          <span class="card-title">首尔核心精华游 ＆ 朋友晚间返程回国</span>
+        </div>
+        <span class="progress-tag">0/6 完成</span>
+      </div>
+      <div class="tags"><span class="tag">景福宫/韩屋村</span><span class="tag">三清洞</span><span class="tag">晚送机</span></div>
+      <div class="card-desc">全员白天游览景福宫、漫步北村韩屋村与三清洞独立茶室/画廊，午餐品尝百年土种参鸡汤。傍晚朋友前往仁川机场搭机飞回中国；你们回酒店休整，开启深度漫游模式。</div>
+      <div class="todo-wrap">
+        <div class="todo-header-label">今日待办事项</div>
+        <ul class="todo-list">
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">朋友退房并将行李寄存在酒店前台</span></li>
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">全员上午游览景福宫、漫步北村韩屋村</span></li>
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">中午享用百年土种参鸡汤</span></li>
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">下午漫步三清洞文艺画廊与独立茶室</span></li>
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">傍晚回酒店取行李，送朋友前往仁川机场搭机回国</span></li>
+          <li class="todo-item"><input type="checkbox" onchange="toggleTodo(this)"><span class="todo-text">你们回酒店休整，准备次日汉南洞深度探店</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><span class="date-tag">1.4 周日</span><span class="card-title">汉南洞先锋设计与潮流买手店</span></div>
+      <div class="tags"><span class="tag">潮流买手</span><span class="tag">香氛美学</span><span class="tag">精品咖啡</span></div>
+      <div class="card-desc">探访先锋品牌店（Nonfiction、Tamburins、Mardi Mercredi、Beaker买手店）与精品咖啡馆，悠闲度过设计美学之日。</div>
+    </div>
+    <div class="card">
+      <div class="card-header"><span class="date-tag">1.5 周一</span><span class="card-title">圣水洞旧厂工业风潮流街区</span></div>
+      <div class="tags"><span class="tag">圣水洞</span><span class="tag">工业旧改</span><span class="tag">Ader Error</span></div>
+      <div class="card-desc">打卡当红旧工厂改造概念空间、Ader Error Space概念旗舰店、巨型特色烘焙工坊及各路潮流快闪店。</div>
+    </div>
+    <div class="card">
+      <div class="card-header"><span class="date-tag">1.6 周二</span><span class="card-title">现代百货（汝矣岛）与弘大活力夜生活</span></div>
+      <div class="tags"><span class="tag">The Hyundai Seoul</span><span class="tag">弘大/延南洞</span></div>
+      <div class="card-desc">白天打卡汝矣岛 The Hyundai Seoul 室内巨型温室与设计师品牌集合层，傍晚前往弘大/延南洞品尝烤五花肉与观赏街头演出。</div>
+    </div>
+    <div class="card">
+      <div class="card-header"><span class="date-tag">1.7 周三</span><span class="card-title">首尔伴手礼采买 ＆ 返程</span></div>
+      <div class="tags"><span class="tag">仁川返程</span><span class="tag">伴手礼</span></div>
+      <div class="card-desc">收拾行李，采购最后的新年伴手礼与零食，搭乘机场快线前往仁川机场踏上归途。</div>
+    </div>
+  </div>
+
+  <script>
+    function setTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      document.getElementById('tab-tokyo').style.display = tabId === 'tokyo' ? 'block' : 'none';
+      document.getElementById('tab-kansai').style.display = tabId === 'kansai' ? 'block' : 'none';
+      document.getElementById('tab-seoul').style.display = tabId === 'seoul' ? 'block' : 'none';
+    }
+
+    function updateCardProgress(card) {
+      const items = card.querySelectorAll('.todo-item');
+      if (items.length === 0) return;
+      const checkedCount = card.querySelectorAll('.todo-item.completed').length;
+      const tag = card.querySelector('.progress-tag');
+      if (tag) {
+        tag.textContent = `${checkedCount}/${items.length} 完成`;
+        if (checkedCount === items.length) {
+          tag.style.background = '#dcfce7';
+          tag.style.color = '#15803d';
+        } else {
+          tag.style.background = '#f3f4f6';
+          tag.style.color = '#6b7280';
+        }
+      }
+    }
+
+    function toggleTodo(checkbox) {
+      const item = checkbox.closest('.todo-item');
+      if (checkbox.checked) {
+        item.classList.add('completed');
+      } else {
+        item.classList.remove('completed');
+      }
+      const card = checkbox.closest('.card');
+      updateCardProgress(card);
+      saveState();
+    }
+
+    function saveState() {
+      const state = {};
+      document.querySelectorAll('.card[data-day]').forEach(card => {
+        const day = card.dataset.day;
+        const checks = Array.from(card.querySelectorAll('input[type="checkbox"]')).map(cb => cb.checked);
+        state[day] = checks;
+      });
+      localStorage.setItem('trip_todos_state', JSON.stringify(state));
+    }
+
+    function loadState() {
+      const saved = localStorage.getItem('trip_todos_state');
+      if (!saved) return;
+      try {
+        const state = JSON.parse(saved);
+        document.querySelectorAll('.card[data-day]').forEach(card => {
+          const day = card.dataset.day;
+          if (state[day]) {
+            const checkboxes = card.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach((cb, index) => {
+              if (state[day][index]) {
+                cb.checked = true;
+                cb.closest('.todo-item').classList.add('completed');
+              }
+            });
+            updateCardProgress(card);
+          }
+        });
+      } catch (e) {
+        console.error('Failed to load saved todos', e);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.card[data-day]').forEach(card => updateCardProgress(card));
+      loadState();
+    });
+  </script>
+</body>
+</html>
